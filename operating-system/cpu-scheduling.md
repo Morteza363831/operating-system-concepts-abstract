@@ -18,8 +18,9 @@ CPU scheduling determines which process from the **ready queue** (processes read
   - **P3**: A video player (mixed, CPU for decoding, I/O for streaming).
   - The scheduler prioritizes based on bursts. Run `top` to observe switching (press `f`, enable `STATE` to see R for running, S for sleeping).
 
-- **Figure 5.1**:
-  ![Figure 5.1: CPU and I/O Bursts](figures/c5/fig5.1.png)
+| ![Figure 5.1: CPU and I/O Bursts](figures/c5/fig5.1.png) |
+|:--:|
+| **Figure 5.1**: This diagram shows alternating CPU and I/O bursts in a process’s execution, like a timeline: CPU burst (shaded) → I/O burst (unshaded) → CPU burst. It highlights P1’s long CPU bursts vs. P2’s short CPU bursts with frequent I/O. |
   
 - **Why It Matters**: Scheduling maximizes CPU utilization and balances responsiveness (e.g., P2’s typing) with throughput (e.g., P1’s compilation). Context switches add overhead, so schedulers optimize frequency.
 
@@ -77,7 +78,9 @@ We calculate **tf**, **Tt**, **Tt/ts**, and **tw** for each algorithm, presented
   - **Pros**: Simple, fair for equal-priority processes.
   - **Cons**: Long waiting times if a long process (P1) runs first (**convoy effect**).
   - **Figure 5.4**:
+    
     ![Figure 5.4: FCFS Gantt Chart](figures/c5/fig5.4.png)
+    
     This Gantt chart shows P1 (0-24ms), P2 (24-27ms), P3 (27-30ms), illustrating P2 and P3 waiting for P1.
 
 - **Shortest-Job-First (SJF)**:
@@ -93,7 +96,9 @@ We calculate **tf**, **Tt**, **Tt/ts**, and **tw** for each algorithm, presented
   - **Pros**: Minimizes average waiting time (optimal for non-preemptive).
   - **Cons**: Needs ts prediction; long jobs (P1) may starve.
   - **Figure 5.6**:
+  
     ![Figure 5.6: SJF Gantt Chart](figures/c5/fig5.6.png)
+    
     Gantt chart shows P2 (0-3ms), P3 (3-6ms), P1 (6-30ms), highlighting shorter jobs first.
 
 - **Priority Scheduling**:
@@ -123,15 +128,20 @@ We calculate **tf**, **Tt**, **Tt/ts**, and **tw** for each algorithm, presented
   - **Pros**: Fair, ideal for time-sharing (Ubuntu’s desktop).
   - **Cons**: High context-switch overhead if quantum is too small.
   - **Figure 5.9**:
+  - 
     ![Figure 5.9: RR Gantt Chart](figures/c5/fig5.9.png)
+    
     Gantt chart shows P1 (0-10), P2 (10-13), P3 (13-16), P1 (16-26), P1 (26-27), showing time-sliced execution.
 
 - **Multilevel Queue**:
   - **How**: Multiple queues with different priorities (e.g., foreground for interactive, background for batch). Each queue uses its own algorithm (e.g., RR for foreground, FCFS for background).
   - **Example**: P2 (Firefox) in foreground queue (RR, 10ms quantum), P1 (backup) in background (FCFS). P2 gets more CPU initially.
   - **Figure 5.11**:
+  
     ![Figure 5.11: Multilevel Queue](figures/c5/fig5.11.png)
+    
     Diagram shows two queues: foreground (RR) and background (FCFS), with processes assigned by type.
+    
   - **Ubuntu Tip**: Ubuntu’s CFS mimics this by prioritizing interactive tasks. Check with `schedtool -v [pid]`.
 
 - **Multilevel Feedback Queue**:
@@ -140,7 +150,9 @@ We calculate **tf**, **Tt**, **Tt/ts**, and **tw** for each algorithm, presented
   - **Pros**: Adapts to process behavior (interactive vs. batch).
   - **Cons**: Complex to tune parameters.
   - **Figure 5.12**:
+  
     ![Figure 5.12: Multilevel Feedback Queue](figures/c5/fig5.12.png)
+    
     Shows three queues with increasing quanta (8ms, 16ms, FCFS), with arrows indicating process movement.
 
 **Ubuntu Insight**: Ubuntu’s **Completely Fair Scheduler (CFS)** resembles a multilevel feedback queue, adjusting priorities via **virtual runtime**. Run `cat /proc/sched_debug` (sudo) to see task priorities and runtimes.
@@ -185,7 +197,9 @@ Multicore CPUs (common in Ubuntu) require advanced scheduling:
   Average: tw = (0 + 0 + 3)/3 = 1ms, Tt = (24 + 3 + 6)/3 = 11ms
   ```
 - **Figure 5.15**:
+
   ![Figure 5.15: Load Balancing](figures/c5/fig5.15.png)
+  
   Diagram shows a thread moving from a busy core to an idle one, illustrating load balancing.
 
 - **Ubuntu Tip**: Use `taskset -c 0-3 make` to pin compilation to all cores, or `taskset -c 0 make` to one core. Compare speed with `time`. Check cores in `htop` (press `F2`, enable CPU meters).
@@ -210,7 +224,9 @@ Real-time systems prioritize predictable timing:
   Average: tw = (0 + 5)/2 = 2.5ms, Tt = (5 + 15)/2 = 10ms
   ```
 - **Figure 5.20**:
+
   ![Figure 5.20: EDF Scheduling](figures/c5/fig5.20.png)
+  
   Diagram shows EDF reordering tasks by deadline (e.g., P1 before P2).
 
 - **Ubuntu Tip**: Set real-time priority with `chrt -r -p 50 [pid]` (sudo). Install `rt-tests` (`sudo apt install rt-tests`) and run `cyclictest` to measure latency.
