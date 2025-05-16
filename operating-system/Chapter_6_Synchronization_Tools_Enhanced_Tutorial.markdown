@@ -1,7 +1,5 @@
 # Tutorial: Chapter 6 - Synchronization Tools
 
-This tutorial provides an in-depth exploration of Chapter 6, *Synchronization Tools*, from *Operating System Concepts* (10th Edition), designed to teach process synchronization as effectively as the book. Each section is explained comprehensively, with detailed concepts, three illustrative examples per section (including flows, code, and visual aids like pseudo-flowcharts), solutions to key practice exercises (p. 287–288), figure references for GitHub screenshots, exam tips, and essential practices. This document is tailored for a third-year computer engineering student preparing for weekly quizzes and exams.
-
 ---
 
 ## 6.1 Background
@@ -66,10 +64,9 @@ Result: counter = 6 (Incorrect, should be 7)
    - **Fix**: Use a monitor (Section 6.7).
 
 
-<div align="center">
-  <img src="figures/c6/fig-6.1.png">
-  <p "><strong>Figure 6.1</strong> General structure of a typical process.</p>
-</div>
+![fig-6 1](https://github.com/user-attachments/assets/675f3c3c-7199-4b00-bfb4-199819e4d45a)
+
+**Figure 6.1** General structure of a typical process.
 
 ---
 
@@ -212,10 +209,9 @@ Exit: interested[i] = false       Enter critical section
      - **Result**: Exclusive access.  
    - **Code**: As above.
 
-<div align="center">
-  <img src="figures/c6/fig-6.3.png">
-  <p "><strong>Figure 6.3</strong> The structure of process Pi in Peterson’s solution.</p>
-</div>
+![fig-6 3](https://github.com/user-attachments/assets/9b29b00f-faa8-4b6f-8366-812b73ca6439)
+
+**Figure 6.3** The structure of process Pi in Peterson’s solution.
 
 ---
 
@@ -288,10 +284,9 @@ Spin (wait)       Enter critical section
      - **Result**: Correct balance.  
    - **Code**: As above.
 
-<div align="center">
-  <img src="figures/c6/fig-6.5.png">
-  <p "><strong>Figure 6.5</strong> The definition of the atomic test and set() instruction.</p>
-</div>
+![fig-6 5](https://github.com/user-attachments/assets/66cc9193-8938-4a62-8467-807fff5c5cf3)
+
+Figure 6.5 The definition of the atomic test and set() instruction.
 
 ---
 
@@ -362,10 +357,9 @@ Spin              Set available = false
      - **Result**: Safe operation.  
    - **Code**: As above.
 
-<div align="center">
-  <img src="figures/c6/fig-6.10.png">
-  <p "><strong>Figure 6.10</strong> Solution to the critical-section problem using mutex locks.</p>
-</div>
+![fig-6 10](https://github.com/user-attachments/assets/05a59b2a-5c41-41c7-9c3e-5a550d665845)
+
+**Figure 6.10** Solution to the critical-section problem using mutex locks.
 
 ---
 
@@ -552,12 +546,9 @@ signal()          Exit monitor
          }
      }
      ```
+![fig-6 13](https://github.com/user-attachments/assets/fa5c53af-40c6-4a91-ba60-e8b19515a0cc)
 
-<div align="center">
-  <img src="figures/c6/fig-6.13.png">
-  <p "><strong>Figure 6.13</strong> Monitor with condition variables.</p>
-</div>
-
+Figure 6.13 Monitor with condition variables.
 
 ---
 
