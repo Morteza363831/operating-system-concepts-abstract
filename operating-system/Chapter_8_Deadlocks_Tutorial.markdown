@@ -1,4 +1,4 @@
-# Tutorial: Chapter 8 - Deadlocks (Part Three: Process Synchronization)
+# Tutorial: Chapter 8 - Deadlocks
 
 This tutorial provides an in-depth exploration of Chapter 8, *Deadlocks*, from *Operating System Concepts* (10th Edition), designed to teach deadlock concepts as effectively as the book. Each section is explained comprehensively, with detailed concepts, three examples per section (including flows, code, and visual aids like pseudo-flowcharts or tables), solutions to key practice exercises (p. 349–351), figure references for GitHub screenshots, exam tips, and essential practices. This document is tailored for a third-year computer engineering student preparing for weekly quizzes and exams.
 
