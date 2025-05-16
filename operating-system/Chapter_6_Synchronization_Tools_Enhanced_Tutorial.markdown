@@ -1,4 +1,4 @@
-# Tutorial: Chapter 6 - Synchronization Tools (Part Three: Process Synchronization)
+![image](https://github.com/user-attachments/assets/3c3b3cdc-91b0-48ab-a257-730829281811)![image](https://github.com/user-attachments/assets/36094710-853d-441c-90e8-3ac920ed5b37)# Tutorial: Chapter 6 - Synchronization Tools
 
 This tutorial provides an in-depth exploration of Chapter 6, *Synchronization Tools*, from *Operating System Concepts* (10th Edition), designed to teach process synchronization as effectively as the book. Each section is explained comprehensively, with detailed concepts, three illustrative examples per section (including flows, code, and visual aids like pseudo-flowcharts), solutions to key practice exercises (p. 287–288), figure references for GitHub screenshots, exam tips, and essential practices. This document is tailored for a third-year computer engineering student preparing for weekly quizzes and exams.
 
@@ -65,7 +65,11 @@ Result: counter = 6 (Incorrect, should be 7)
      ```
    - **Fix**: Use a monitor (Section 6.7).
 
-**Figure Reference**: No direct figure, but **Figure 6.1** (p. 260) in Section 6.2 shows process structure relevant to concurrency. Screenshot it to visualize process segments.
+
+<div align="center">
+  <img src="figures/c6/fig-6.1.png">
+  <p "><strong>Figure 6.1</strong> General structure of a typical process.</p>
+</div>
 
 ---
 
@@ -138,7 +142,7 @@ Remainder Section (Other tasks)
      unlock_server();
      ```
 
-**Figure Reference**: **Figure 6.1** (p. 260) shows a process with entry, critical, exit, and remainder sections. Screenshot this to visualize the critical-section structure.
+**Figure Reference**: **Figure 6.1** shows a process with entry, critical, exit, and remainder sections.
 
 ---
 
@@ -208,7 +212,10 @@ Exit: interested[i] = false       Enter critical section
      - **Result**: Exclusive access.  
    - **Code**: As above.
 
-**Figure Reference**: **Figure 6.2** (p. 263) shows Peterson’s algorithm logic. Screenshot it to visualize the decision process.
+<div align="center">
+  <img src="figures/c6/fig-6.3.png">
+  <p "><strong>Figure 6.3</strong> The structure of process Pi in Peterson’s solution.</p>
+</div>
 
 ---
 
@@ -281,7 +288,10 @@ Spin (wait)       Enter critical section
      - **Result**: Correct balance.  
    - **Code**: As above.
 
-**Figure Reference**: **Figure 6.3** (p. 266) shows test-and-set for mutual exclusion. Screenshot it to visualize the lock mechanism.
+<div align="center">
+  <img src="figures/c6/fig-6.5.png">
+  <p "><strong>Figure 6.5</strong> The definition of the atomic test and set() instruction.</p>
+</div>
 
 ---
 
@@ -352,7 +362,10 @@ Spin              Set available = false
      - **Result**: Safe operation.  
    - **Code**: As above.
 
-**Figure Reference**: **Figure 6.4** (p. 271) shows mutex lock usage. Screenshot it to visualize lock operations.
+<div align="center">
+  <img src="figures/c6/fig-6.10.png">
+  <p "><strong>Figure 6.10</strong> Solution to the critical-section problem using mutex locks.</p>
+</div>
 
 ---
 
@@ -438,8 +451,6 @@ signal(full)              signal(empty)
      take_seat();
      signal(&seats);
      ```
-
-**Figure Reference**: **Figure 6.5** (p. 274) shows semaphores in the bounded-buffer problem. Screenshot it to understand semaphore coordination.
 
 ---
 
@@ -542,7 +553,11 @@ signal()          Exit monitor
      }
      ```
 
-**Figure Reference**: **Figure 6.7** (p. 279) shows a monitor’s structure. Screenshot it to see data and procedure encapsulation.
+<div align="center">
+  <img src="figures/c6/fig-6.13.png">
+  <p "><strong>Figure 6.13</strong> Monitor with condition variables.</p>
+</div>
+
 
 ---
 
@@ -607,8 +622,7 @@ Deadlock               Deadlock
      enqueue_job(priority);
      ```
 
-**Figure Reference**: No specific figure, but **Figure 6.7** (p. 279) relates to liveness in monitors. Screenshot it for context.
-
+**Figure Reference**: **Figure 6.7**
 ---
 
 ## 6.9 Evaluation
@@ -675,7 +689,7 @@ Spinlocks are fast but CPU-intensive; semaphores are versatile but error-prone; 
      while (compare_and_swap(&data, old, new) != old);
      ```
 
-**Figure Reference**: No figure, but **Figure 6.3** (p. 266) provides hardware context. Screenshot it for reference.
+**Figure Reference**: **Figure 6.3**
 
 ---
 
