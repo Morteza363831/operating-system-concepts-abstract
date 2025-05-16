@@ -66,8 +66,9 @@ Release resource
      allocate(port1); // Server 1
      allocate(port2); // Server 2
      ```
+![image](https://github.com/user-attachments/assets/099c189f-95fa-4179-933f-6ef1ba8723c5)
 
-**Figure Reference**: No specific figure, but **Figure 8.1** (p. 323) in Section 8.2 illustrates deadlock conditions. Screenshot it for context.
+**Figure 8.4** Resource-allocation graph.
 
 ---
 
@@ -136,7 +137,10 @@ Circular Wait ----> Deadlock
      allocate(block2); // Process 2
      ```
 
-**Figure Reference**: **Figure 8.1** (p. 323) shows a resource-allocation graph with a deadlock cycle. Screenshot it to visualize circular wait.
+![image](https://github.com/user-attachments/assets/5e003707-e9bc-4b3b-9967-b6ee2f3b7924)
+
+![image](https://github.com/user-attachments/assets/c5ae44ae-79dd-4be7-b776-c59937bdc3c3)
+
 
 ---
 
@@ -198,7 +202,7 @@ Most systems use prevention or avoidance for critical applications, detection fo
      if (can_allocate()) assign_core(); // Avoidance
      ```
 
-**Figure Reference**: **Figure 8.2** (p. 324) shows a resource-allocation graph. Screenshot it to understand detection.
+**Figure Reference**: **Figure 8.4**
 
 ---
 
@@ -265,8 +269,6 @@ Grant request      Deny request
      if (port_id < current_port) wait();
      ```
 
-**Figure Reference**: No specific figure, but **Figure 8.1** (p. 323) relates to conditions. Screenshot it for context.
-
 ---
 
 ## 8.5 Deadlock Avoidance
@@ -276,6 +278,9 @@ Deadlock avoidance dynamically grants resources only if the system remains in a 
 - **Resource-Allocation Graph**: Deny requests creating cycles (single-instance resources).  
 - **Banker’s Algorithm**: For multiple resource instances, ensure a safe sequence exists where processes can finish.  
 Avoidance balances flexibility and efficiency but needs future resource predictions, adding complexity.
+
+![image](https://github.com/user-attachments/assets/23e7c991-2094-4f03-9721-40713562d44e)
+
 
 **Visual Aid**:  
 **Pseudo-Flowchart for Banker’s Algorithm**:
@@ -330,7 +335,11 @@ Grant request      Deny request
      if (safe_allocation(tool)) assign();
      ```
 
-**Figure Reference**: **Figure 8.3** (p. 330) shows a resource-allocation graph for avoidance. Screenshot it to visualize safe states.
+![image](https://github.com/user-attachments/assets/e28e947c-5f0f-4409-bd30-84f44457b05d)
+
+![image](https://github.com/user-attachments/assets/32c52bb9-938a-406a-9603-aa62b76119a6)
+
+
 
 ---
 
@@ -395,7 +404,8 @@ Recover            Continue
      if (deadlock_exists()) terminate_vm();
      ```
 
-**Figure Reference**: **Figure 8.5** (p. 336) shows a resource-allocation graph with a cycle. Screenshot it to visualize detection.
+![image](https://github.com/user-attachments/assets/4a03cbab-a9f1-4dc0-8551-be2495d0f4b1)
+
 
 ---
 
@@ -461,8 +471,6 @@ Kill process      Take resource
      ```c
      if (deadlock) kill(server);
      ```
-
-**Figure Reference**: No specific figure, but **Figure 8.5** (p. 336) relates to detection leading to recovery. Screenshot it for context.
 
 ---
 
