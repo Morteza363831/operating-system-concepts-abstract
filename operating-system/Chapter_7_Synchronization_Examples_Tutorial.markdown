@@ -67,7 +67,10 @@ signal(full)              signal(empty)
      - **Result**: Smooth streaming.  
    - **Code**: As above, with `add_frame()` and `play_frame()`.
 
-**Figure Reference**: **Figure 7.1** (p. 291) shows the bounded-buffer structure with semaphores. Screenshot it to visualize producer-consumer coordination.
+![image](https://github.com/user-attachments/assets/eb9eefff-28eb-45ee-afaa-511658eaddd5)
+
+**Figure 7.2** shows the bounded-buffer structure with semaphores.
+
 
 ---
 
@@ -147,7 +150,7 @@ signal(mutex)              |
      - **Result**: Consistent data.  
    - **Code**: As above, with `read_prices()` and `update_price()`.
 
-**Figure Reference**: No specific figure, but **Figure 7.1** (p. 291) relates to semaphore usage. Screenshot it for context.
+**Figure Reference**: **Figure 7.2** 
 
 ---
 
@@ -229,7 +232,9 @@ Exit monitor       |
      - **Result**: Fair allocation.  
    - **Code**: As above, with `allocate_channels()`.
 
-**Figure Reference**: **Figure 7.2** (p. 297) illustrates the dining-philosophers problem. Screenshot it to visualize the setup.
+![Screenshot from 2025-05-16 16-50-21](https://github.com/user-attachments/assets/97512a41-a90b-405a-b734-8a1782b6f711)
+
+**Figure 7.8** illustrates the dining-philosophers problem.
 
 ---
 
@@ -320,10 +325,10 @@ signal()          Exit monitor
              signal(stock);
          }
      }
-     ```
+   ```
+   
 
-**Figure Reference**: **Figure 7.3** (p. 300) shows a monitor’s structure for dining-philosophers. Screenshot it to visualize monitor encapsulation.
-
+**Figure Reference**: **Figure 7.7**
 ---
 
 ## 7.5 Synchronization in Windows
@@ -395,8 +400,9 @@ These tools handle kernel-level and user-level synchronization, optimized for Wi
      WaitForSingleObject(event, INFINITE);
      SetEvent(event);
      ```
+![image](https://github.com/user-attachments/assets/2ee3ad4f-f303-4d7f-99e4-3d1df7960a36)
 
-**Figure Reference**: No specific figure, but **Figure 7.3** (p. 300) relates to monitor concepts applicable to Windows. Screenshot it for context.
+**Figure 7.3** relates to monitor concepts applicable to Windows.
 
 ---
 
@@ -478,7 +484,8 @@ These tools are POSIX-compliant, supporting both user and kernel-level synchroni
      write_data();
      ```
 
-**Figure Reference**: No specific figure, but **Figure 7.2** (p. 297) relates to semaphore usage in Linux. Screenshot it for context.
+![image](https://github.com/user-attachments/assets/85c328b2-7e54-4764-a25f-e440acc75883)
+**Figure 7.8** relates to semaphore usage in Linux.
 
 ---
 
@@ -545,8 +552,6 @@ These approaches suit specific domains (e.g., high-performance computing) but ma
      ```haskell
      map transform input
      ```
-
-**Figure Reference**: No specific figure, but **Figure 7.3** (p. 300) relates to structured synchronization. Screenshot it for context.
 
 ---
 
