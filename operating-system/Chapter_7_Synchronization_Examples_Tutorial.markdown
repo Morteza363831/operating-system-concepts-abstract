@@ -1,4 +1,4 @@
-# Tutorial: Chapter 7 - Synchronization Examples (Part Three: Process Synchronization)
+# Tutorial: Chapter 7 - Synchronization Examples
 
 This tutorial provides an in-depth exploration of Chapter 7, *Synchronization Examples*, from *Operating System Concepts* (10th Edition), designed to teach synchronization problems and solutions as effectively as the book. Each section is explained comprehensively, with detailed concepts, three examples per section (including flows, code, and visual aids like pseudo-flowcharts or tables), solutions to key practice exercises (p. 317–319), figure references for GitHub screenshots, exam tips, and essential practices. This document is tailored for a third-year computer engineering student preparing for weekly quizzes and exams.
 
