@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/3c3b3cdc-91b0-48ab-a257-730829281811)![image](https://github.com/user-attachments/assets/36094710-853d-441c-90e8-3ac920ed5b37)# Tutorial: Chapter 6 - Synchronization Tools
+# Tutorial: Chapter 6 - Synchronization Tools
 
 This tutorial provides an in-depth exploration of Chapter 6, *Synchronization Tools*, from *Operating System Concepts* (10th Edition), designed to teach process synchronization as effectively as the book. Each section is explained comprehensively, with detailed concepts, three illustrative examples per section (including flows, code, and visual aids like pseudo-flowcharts), solutions to key practice exercises (p. 287–288), figure references for GitHub screenshots, exam tips, and essential practices. This document is tailored for a third-year computer engineering student preparing for weekly quizzes and exams.
 
